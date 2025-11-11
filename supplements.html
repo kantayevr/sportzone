@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавки | SportZone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">🏋️‍♂️ <span>SportZone</span></div>
+
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+
+        <nav class="nav-links" id="nav-links">
+            <a href="index.html">Главная</a>
+            <a href="product.html">Товары</a>
+            <a href="clothing.html">Одежда</a>
+            <a href="equipment.html">Инвентарь</a>
+            <a href="supplements.html">Добавки</a>
+            <a href="contact.html">Контакты</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button id="theme-toggle" class="icon-btn">🌙</button>
+            <a href="cart.html" class="cart-icon">🛒 <span id="cart-count">0</span></a>
+        </div>
+    </header>
+
+
+    <main class="catalog">
+        <h2>Спортивное питание</h2>
+        <p class="catalog-sub">Энергия, выносливость и рост мышц 💪</p>
+
+        <div class="search-container">
+            <input type="text" id="search" placeholder="🔍 Поиск товаров...">
+        </div>
+
+
+        <section class="product-grid">
+            <div class="product">
+                <img src="beta.jpg" alt="Бета-аланин">
+                <h3>Beta-Alanine 200g</h3>
+                <p>$35</p>
+                <button onclick="addToCart(31)">Добавить в корзину</button>
+            </div>
+
+            <div class="product">
+                <img src="lcit.jpg" alt="L-Citrulline Malate">
+                <h3>L-Citrulline Malate</h3>
+                <p>$30</p>
+                <button onclick="addToCart(32)">Добавить в корзину</button>
+            </div>
+
+            <div class="product">
+                <img src="ibutamoren.jpg" alt="Ibutamoren">
+                <h3>Ibutamoren 16-60g</h3>
+                <p>$50</p>
+                <button onclick="addToCart(33)">Добавить в корзину</button>
+            </div>
+
+            <div class="product">
+                <img src="test.jpg" alt="Ibutamoren">
+                <h3>Testosteron</h3>
+                <p>$250</p>
+                <button onclick="addToCart(34)">Добавить в корзину</button>
+            </div>
+
+            <div class="product">
+                <img src="tren.jpg" alt="Ibutamoren">
+                <h3>Trenbolone</h3>
+                <p>$300</p>
+                <button onclick="addToCart(35)">Добавить в корзину</button>
+            </div>
+
+            <div class="product">
+                <img src="protein.jpg" alt="Ibutamoren">
+                <h3>Protein</h3>
+                <p>$100</p>
+                <button onclick="addToCart(36)">Добавить в корзину</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 SportZone | Все права защищены.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

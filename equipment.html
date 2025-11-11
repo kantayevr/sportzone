@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инвентарь | SportZone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">🏋️‍♂️ <span>SportZone</span></div>
+
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+
+        <nav class="nav-links" id="nav-links">
+            <a href="index.html">Главная</a>
+            <a href="product.html">Товары</a>
+            <a href="clothing.html">Одежда</a>
+            <a href="equipment.html" class="active">Инвентарь</a>
+            <a href="supplements.html">Добавки</a>
+            <a href="contact.html">Контакты</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button id="theme-toggle" class="icon-btn">🌙</button>
+            <a href="cart.html" class="cart-icon">🛒 <span id="cart-count">0</span></a>
+        </div>
+    </header>
+
+    <main class="catalog">
+        <h2>Спортивный инвентарь</h2>
+        <p class="catalog-sub">Оборудование для зала и дома 🏋️</p>
+
+        <div class="search-container">
+            <input type="text" id="search" placeholder="🔍 Поиск товаров...">
+        </div>
+
+
+        <section class="product-grid">
+            <div class="product">
+                <img src="bench.jpg" alt="Скамья для жима">
+                <h3>Скамья для жима</h3>
+                <p>$150</p>
+                <button onclick="addToCart(25)">Добавить в корзину</button>
+            </div>
+
+            <div class="product">
+                <img src="gloves.jpg" alt="Перчатки для зала">
+                <h3>Перчатки для зала</h3>
+                <p>$40</p>
+                <button onclick="addToCart(26)">Добавить в корзину</button>
+            </div>
+
+            <div class="product">
+                <img src="gear.jpg" alt="Гантели 10 кг">
+                <h3>Гантели 10 кг</h3>
+                <p>$90</p>
+                <button onclick="addToCart(27)">Добавить в корзину</button>
+            </div>
+
+            <div class="product">
+                <img src="жгут.jpg" alt="Гантели 10 кг">
+                <h3>Жгут</h3>
+                <p>$20</p>
+                <button onclick="addToCart(28)">Добавить в корзину</button>
+            </div>
+
+            <div class="product">
+                <img src="гиря.jpg" alt="Гантели 10 кг">
+                <h3>Гири</h3>
+                <p>$50</p>
+                <button onclick="addToCart(29)">Добавить в корзину</button>
+            </div>
+
+            <div class="product">
+                <img src="скакалка.jpg" alt="Гантели 10 кг">
+                <h3>Скакалка</h3>
+                <p>$10</p>
+                <button onclick="addToCart(30)">Добавить в корзину</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 SportZone | Все права защищены.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggleBtn = document.getElementById("menu-toggle");
+            const navLinks = document.getElementById("nav-links");
+
+            if (toggleBtn && navLinks) {
+                toggleBtn.addEventListener("click", () => {
+                    navLinks.classList.toggle("active");
+                    toggleBtn.textContent = navLinks.classList.contains("active") ? "✖" : "☰";
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

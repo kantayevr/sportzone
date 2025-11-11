@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Каталог товаров | SportZone</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">🏋️‍♂️ <span>SportZone</span></div>
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+
+        <nav class="nav-links" id="nav-links">
+            <a href="index.html">Главная</a>
+            <a href="product.html" class="active">Товары</a>
+            <a href="clothing.html">Одежда</a>
+            <a href="equipment.html">Инвентарь</a>
+            <a href="supplements.html">Добавки</a>
+            <a href="contact.html">Контакты</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button id="theme-toggle" class="icon-btn">🌙</button>
+            <a href="cart.html" class="cart-icon">🛒 <span id="cart-count">0</span></a>
+        </div>
+    </header>
+
+    <main class="catalog">
+        <h2>Каталог спортивных товаров</h2>
+        <p class="catalog-sub">Выбирай лучшее оборудование и аксессуары для тренировок 💪</p>
+
+        <div class="search-container">
+            <input type="text" id="search" placeholder="🔍 Поиск товаров...">
+        </div>
+
+
+        <section class="product-grid">
+            <!-- 1 -->
+            <div class="product">
+                <img src="nike air.jpg" alt="Кроссовки Nike Air" />
+                <h3>Кроссовки Nike Air</h3>
+                <p>$120</p>
+                <button onclick="addToCart(1)">Добавить в корзину</button>
+            </div>
+
+            <!-- 2 -->
+            <div class="product">
+                <img src="gloves.jpg" alt="Перчатки для зала" />
+                <h3>Перчатки для зала</h3>
+                <p>$40</p>
+                <button onclick="addToCart(2)">Добавить в корзину</button>
+            </div>
+
+            <!-- 3 -->
+            <div class="product">
+                <img src="beta.jpg" alt="Бета-Аланин 200г" />
+                <h3>Beta-Alanine 200г</h3>
+                <p>$35</p>
+                <button onclick="addToCart(3)">Добавить в корзину</button>
+            </div>
+
+            <!-- 4 -->
+            <div class="product">
+                <img src="dumb.jpg" alt="Гантели 10 кг" />
+                <h3>Гантели 10 кг</h3>
+                <p>$90</p>
+                <button onclick="addToCart(4)">Добавить в корзину</button>
+            </div>
+
+            <!-- 5 -->
+            <div class="product">
+                <img src="gap.jpg" alt="Футболка GAP" />
+                <h3>Футболка GAP</h3>
+                <p>$45</p>
+                <button onclick="addToCart(5)">Добавить в корзину</button>
+            </div>
+
+            <!-- 6 -->
+            <div class="product">
+                <img src="bench.jpg" alt="Скамья для жима" />
+                <h3>Скамья для жима</h3>
+                <p>$150</p>
+                <button onclick="addToCart(6)">Добавить в корзину</button>
+            </div>
+
+            <!-- 7 -->
+            <div class="product">
+                <img src="lcit.jpg" alt="L-Citrulline Malate" />
+                <h3>L-Citrulline Malate</h3>
+                <p>$30</p>
+                <button onclick="addToCart(7)">Добавить в корзину</button>
+            </div>
+
+            <!-- 8 -->
+            <div class="product">
+                <img src="niket.jpg" alt="Футболка Nike" />
+                <h3>Футболка Nike</h3>
+                <p>$50</p>
+                <button onclick="addToCart(8)">Добавить в корзину</button>
+            </div>
+
+            <!-- 9 -->
+            <div class="product">
+                <img src="mouth.jpg" alt="Капа для бокса" />
+                <h3>Капа для бокса</h3>
+                <p>$15</p>
+                <button onclick="addToCart(9)">Добавить в корзину</button>
+            </div>
+
+            <!-- 10 -->
+            <div class="product">
+                <img src="ibutamoren.jpg" alt="Ibutamoren" />
+                <h3>Ibutamoren 60g</h3>
+                <p>$30</p>
+                <button onclick="addToCart(10)">Добавить в корзину</button>
+            </div>
+
+            <div class="product">
+                <img src="gear.jpg" alt="Ibutamoren" />
+                <h3>Шлем</h3>
+                <p>$15</p>
+                <button onclick="addToCart(11)">Добавить в корзину</button>
+            </div>
+
+            <div class="product">
+                <img src="gatorade.jpg" alt="Ibutamoren" />
+                <h3>Бутылка</h3>
+                <p>$10</p>
+                <button onclick="addToCart(12)">Добавить в корзину</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 SportZone | Все права защищены.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Гамбургер-меню
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggleBtn = document.getElementById("menu-toggle");
+            const navLinks = document.getElementById("nav-links");
+            if (toggleBtn && navLinks) {
+                toggleBtn.addEventListener("click", () => {
+                    navLinks.classList.toggle("active");
+                    toggleBtn.textContent = navLinks.classList.contains("active") ? "✖" : "☰";
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

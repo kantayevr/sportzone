@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход | SportZone</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Стиль страницы входа */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(180deg, #007bff, #0d1117);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background: #fff;
+            color: #222;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 360px;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .login-container input:focus {
+            border-color: #007bff;
+        }
+
+        .login-container button {
+            background: #007bff;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-container button:hover {
+            background: #0056cc;
+        }
+
+        .login-container p {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .login-container a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+        <h2>Вход в SportZone</h2>
+        <form onsubmit="return loginUser(event)">
+            <input type="text" id="username" placeholder="Имя пользователя" required>
+            <input type="password" id="password" placeholder="Пароль" required>
+            <button type="submit">Войти</button>
+        </form>
+        <p>Нет аккаунта? <a href="register.html">Зарегистрироваться</a></p>
+        <p><a href="index.html">⬅ Вернуться на главную</a></p>
+    </div>
+
+    <script>
+        function loginUser(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            if (!username || !password) {
+                alert("Введите логин и пароль!");
+                return false;
+            }
+
+            // Проверка логина (можно заменить на запрос к серверу)
+            const savedUser = localStorage.getItem("user");
+            if (savedUser) {
+                const user = JSON.parse(savedUser);
+                if (user.username === username && user.password === password) {
+                    alert("Добро пожаловать, " + username + "!");
+                    window.location.href = "index.html";
+                } else {
+                    alert("Неверный логин или пароль!");
+                }
+            } else {
+                alert("Пользователь не найден. Зарегистрируйтесь!");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

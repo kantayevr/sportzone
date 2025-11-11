@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Оформление заказа | SportZone</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">🏋️‍♂️ <span>SportZone</span></div>
+
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+
+        <nav class="nav-links" id="nav-links">
+            <a href="index.html">Главная</a>
+            <a href="product.html">Товары</a>
+            <a href="clothing.html">Одежда</a>
+            <a href="equipment.html">Инвентарь</a>
+            <a href="supplements.html">Добавки</a>
+            <a href="contact.html">Контакты</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button id="theme-toggle" class="icon-btn">🌙</button>
+            <a href="cart.html" class="cart-icon">🛒 <span id="cart-count">0</span></a>
+        </div>
+    </header>
+
+
+    <main class="checkout-page">
+        <h2>🧾 Оформление заказа</h2>
+
+        <form id="checkout-form" class="checkout-form">
+            <div class="form-section">
+                <h3>1️⃣ Данные получателя</h3>
+                <input type="text" placeholder="Имя и фамилия" required>
+                <input type="email" placeholder="Email" required>
+                <input type="tel" placeholder="Номер телефона" required>
+            </div>
+
+            <div class="form-section">
+                <h3>2️⃣ Адрес доставки</h3>
+                <input type="text" placeholder="Город" required>
+                <input type="text" placeholder="Улица, дом, квартира" required>
+                <input type="text" placeholder="Почтовый индекс" required>
+            </div>
+
+            <div class="form-section">
+                <h3>3️⃣ Оплата</h3>
+                <select required id="payment-method">
+                    <option value="">Выберите способ оплаты</option>
+                    <option value="card">💳 Банковская карта</option>
+                    <option value="cash">💵 Наличные при получении</option>
+                </select>
+
+                <div class="card-info" id="card-info" style="display: none;">
+                    <input type="text" placeholder="Номер карты">
+                    <input type="text" placeholder="MM/YY">
+                    <input type="text" placeholder="CVC">
+                </div>
+            </div>
+
+            <div class="form-section summary">
+                <h3>4️⃣ Подтверждение</h3>
+                <p id="checkout-total">Итого к оплате: $0</p>
+                <button type="submit" class="btn">Подтвердить заказ</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2025 SportZone | Все права защищены.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Получаем корзину
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            const totalEl = document.getElementById("checkout-total");
+            const form = document.getElementById("checkout-form");
+            const paymentSelect = document.getElementById("payment-method");
+            const cardInfo = document.getElementById("card-info");
+
+            // Показ суммы
+            totalEl.textContent = `Итого к оплате: $${total}`;
+
+            // Показ полей карты, если выбрана "карта"
+            paymentSelect.addEventListener("change", () => {
+                cardInfo.style.display = paymentSelect.value === "card" ? "flex" : "none";
+            });
+
+            // Обработка формы
+            form.addEventListener("submit", (e) => {
+                e.preventDefault(); // предотвращаем перезагрузку
+
+                if (cart.length === 0) {
+                    alert("❗ Ваша корзина пуста. Добавьте товары перед оформлением заказа.");
+                    return;
+                }
+
+                alert("✅ Спасибо за заказ! Мы свяжемся с вами в ближайшее время.");
+                localStorage.removeItem("cart"); // очищаем корзину
+                window.location.href = "index.html"; // возвращаем на главную
+            });
+        });
+    </script>
+</body>
+
+</html>

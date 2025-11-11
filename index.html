@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SportZone | Главная</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">🏋️‍♂️ <span>SportZone</span></div>
+
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+
+        <nav class="nav-links" id="nav-links">
+            <a href="index.html">Главная</a>
+            <a href="product.html">Товары</a>
+            <a href="clothing.html">Одежда</a>
+            <a href="equipment.html">Инвентарь</a>
+            <a href="supplements.html">Добавки</a>
+            <a href="contact.html">Контакты</a>
+            <a href="login.html">Войти</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button id="theme-toggle" class="icon-btn">🌙</button>
+            <a href="cart.html" class="cart-icon">🛒 <span id="cart-count">0</span></a>
+        </div>
+    </header>
+
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Твой путь к силе начинается здесь</h1>
+            <p>Лучший спортивный магазин с товарами для тренировок, фитнеса и активного отдыха.</p>
+            <a href="product.html" class="btn">Перейти к покупкам</a>
+        </div>
+    </section>
+
+    <section class="carousel">
+        <div class="slides">
+            <div class="slide active">
+                <img src="jennie.jpg" alt="Nike Banner">
+            </div>
+            <div class="slide">
+                <img src="adidaslogo.jpg" alt="Adidas Banner">
+            </div>
+            <div class="slide">
+                <img src="underlogo.jpg" alt="Gym Banner">
+            </div>
+        </div>
+
+        <button class="carousel-btn prev">❮</button>
+        <button class="carousel-btn next">❯</button>
+
+        <div class="dots"></div>
+    </section>
+
+
+    <section class="features">
+        <div class="feature">
+            <h3>🔥 Лучшее качество</h3>
+            <p>Только проверенные бренды и надёжные материалы.</p>
+        </div>
+        <div class="feature">
+            <h3>🚚 Быстрая доставка</h3>
+            <p>Доставим по всей стране за 1–3 дня.</p>
+        </div>
+        <div class="feature">
+            <h3>💪 Спортивная мотивация</h3>
+            <p>Мы поможем тебе достичь целей и стать лучше.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 SportZone | Все права защищены.</p>
+        <p id="weather">
+            <span class="spinner"></span> Загрузка погоды...
+        </p>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

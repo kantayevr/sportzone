@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация | SportZone</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(180deg, #007bff, #0d1117);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .register-container {
+            background: #fff;
+            color: #222;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 360px;
+            text-align: center;
+        }
+
+        .register-container h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .register-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .register-container input:focus {
+            border-color: #007bff;
+        }
+
+        .register-container button {
+            background: #007bff;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .register-container button:hover {
+            background: #0056cc;
+        }
+
+        .register-container p {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .register-container a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .register-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="register-container">
+        <h2>Регистрация в SportZone</h2>
+        <form onsubmit="return registerUser(event)">
+            <input type="text" id="username" placeholder="Имя пользователя" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Пароль" required minlength="4">
+            <input type="password" id="confirmPassword" placeholder="Подтвердите пароль" required>
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+        <p>Уже есть аккаунт? <a href="login.html">Войти</a></p>
+        <p><a href="index.html">⬅ Вернуться на главную</a></p>
+    </div>
+
+    <script>
+        function registerUser(event) {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+            if (password !== confirmPassword) {
+                alert("Пароли не совпадают!");
+                return false;
+            }
+
+            if (password.length < 4) {
+                alert("Пароль должен содержать минимум 4 символа!");
+                return false;
+            }
+
+            const user = { username, email, password };
+
+            localStorage.setItem("user", JSON.stringify(user));
+            alert("Регистрация успешна! Теперь вы можете войти.");
+            window.location.href = "login.html";
+        }
+    </script>
+
+</body>
+
+</html>
